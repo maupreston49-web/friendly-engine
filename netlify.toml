@@ -1,0 +1,28 @@
+# Netlify config for DeepHull Diving static SPA
+[build]
+  publish = "."
+
+# SPA routing (React/Vite)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Success page for forms
+[[redirects]]
+  from = "/success"
+  to = "/success.html"
+  status = 200
+
+# Caching & security
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"

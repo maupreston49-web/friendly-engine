@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms - Deep Hull Diving</title>
+</head>
+<body>
+    <!-- Contact Form -->
+    <form name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact-form" />
+        <div style="display: none;">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </div>
+        
+        <input type="text" name="firstName" placeholder="First Name" required />
+        <input type="text" name="lastName" placeholder="Last Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="phone" placeholder="Phone" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Quote Request Form -->
+    <form name="quote-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="quote-request" />
+        <div style="display: none;">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </div>
+        
+        <input type="text" name="firstName" placeholder="First Name" required />
+        <input type="text" name="lastName" placeholder="Last Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="phone" placeholder="Phone" required />
+        <input type="text" name="vesselType" placeholder="Vessel Type" required />
+        <input type="text" name="vesselLength" placeholder="Vessel Length" />
+        <input type="text" name="serviceType" placeholder="Service Type" required />
+        <input type="text" name="location" placeholder="Location" />
+        <input type="text" name="urgency" placeholder="Urgency" />
+        <textarea name="message" placeholder="Additional Message"></textarea>
+        <button type="submit">Send Quote Request</button>
+    </form>
+</body>
+</html>
