@@ -3,43 +3,442 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forms - Deep Hull Diving</title>
+    <title>Contact Forms - Deep Hull Diving</title>
+    <meta name="description" content="Contact DeepHull Diving for underwater hull cleaning services. Get quotes and contact our certified commercial divers in Jacksonville, St. Augustine, and Ponte Vedra Beach.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="contact, quote request, hull cleaning, underwater maintenance, Jacksonville, St. Augustine, Ponte Vedra Beach">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact Forms - Deep Hull Diving">
+    <meta property="og:description" content="Contact DeepHull Diving for underwater hull cleaning services. Get quotes and contact our certified commercial divers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deephull.netlify.app/forms.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://deephull.netlify.app/forms.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #64748b;
+        }
+        
+        .forms-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 3rem;
+        }
+        
+        .form-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .form-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1e40af;
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .required {
+            color: #dc2626;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            background: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .error-message {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        .success-message {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .error-message {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        
+        .phone-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .phone-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .forms-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-section {
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Contact Form -->
-    <form name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact-form" />
-        <div style="display: none;">
-            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+        
+        <div class="header">
+            <h1>Contact DeepHull Diving</h1>
+            <p>Get in touch with our certified commercial divers for professional underwater services</p>
         </div>
         
-        <input type="text" name="firstName" placeholder="First Name" required />
-        <input type="text" name="lastName" placeholder="Last Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <input type="tel" name="phone" placeholder="Phone" required />
-        <input type="text" name="subject" placeholder="Subject" required />
-        <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-
-    <!-- Quote Request Form -->
-    <form name="quote-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="quote-request" />
-        <div style="display: none;">
-            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        <div class="forms-container">
+            <!-- Contact Form -->
+            <div class="form-section">
+                <h2 class="form-title">General Contact</h2>
+                <p style="text-align: center; color: #64748b; margin-bottom: 2rem;">
+                    Have questions about our services? Send us a message and we'll get back to you promptly.
+                </p>
+                
+                <form name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contactForm">
+                    <input type="hidden" name="form-name" value="contact-form" />
+                    <div style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject <span class="required">*</span></label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" required minlength="10"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                
+                <div style="text-align: center; margin-top: 1rem;">
+                    <p>Or call us directly:</p>
+                    <a href="tel:+19045700910" class="phone-link">(904) 570-0910</a>
+                </div>
+            </div>
+            
+            <!-- Quote Request Form -->
+            <div class="form-section">
+                <h2 class="form-title">Request Quote</h2>
+                <p style="text-align: center; color: #64748b; margin-bottom: 2rem;">
+                    Get a detailed estimate for your underwater maintenance needs. We'll provide a comprehensive quote within 24 hours.
+                </p>
+                
+                <form name="quote-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="quoteForm">
+                    <input type="hidden" name="form-name" value="quote-request" />
+                    <div style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quoteFirstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="quoteFirstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quoteLastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="quoteLastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quoteEmail">Email <span class="required">*</span></label>
+                            <input type="email" id="quoteEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quotePhone">Phone <span class="required">*</span></label>
+                            <input type="tel" id="quotePhone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="vesselType">Vessel Type <span class="required">*</span></label>
+                            <select id="vesselType" name="vesselType" required>
+                                <option value="">Select vessel type</option>
+                                <option value="Sailboat">Sailboat</option>
+                                <option value="Motor Yacht">Motor Yacht</option>
+                                <option value="Fishing Boat">Fishing Boat</option>
+                                <option value="Commercial Vessel">Commercial Vessel</option>
+                                <option value="Pleasure Craft">Pleasure Craft</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vesselLength">Vessel Length (feet)</label>
+                            <input type="number" id="vesselLength" name="vesselLength" min="10" max="1000">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="serviceType">Service Type <span class="required">*</span></label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">Select service needed</option>
+                                <option value="Hull Cleaning">Hull Cleaning</option>
+                                <option value="Prop Polishing">Prop Polishing</option>
+                                <option value="Zinc Replacement">Zinc Replacement</option>
+                                <option value="Emergency Service">Emergency Service</option>
+                                <option value="Full Service Package">Full Service Package</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="Marina or location">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="urgency">Urgency</label>
+                        <select id="urgency" name="urgency">
+                            <option value="">Select urgency level</option>
+                            <option value="Emergency (ASAP)">Emergency (ASAP)</option>
+                            <option value="This Week">This Week</option>
+                            <option value="Next Week">Next Week</option>
+                            <option value="This Month">This Month</option>
+                            <option value="Planning Ahead">Planning Ahead</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quoteMessage">Additional Details</label>
+                        <textarea id="quoteMessage" name="message" placeholder="Please provide any additional details about your vessel or specific requirements"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Get Free Quote</button>
+                </form>
+                
+                <div style="text-align: center; margin-top: 1rem;">
+                    <p>Need immediate assistance?</p>
+                    <a href="tel:+19045700910" class="phone-link">Call (904) 570-0910</a>
+                </div>
+            </div>
         </div>
-        
-        <input type="text" name="firstName" placeholder="First Name" required />
-        <input type="text" name="lastName" placeholder="Last Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <input type="tel" name="phone" placeholder="Phone" required />
-        <input type="text" name="vesselType" placeholder="Vessel Type" required />
-        <input type="text" name="vesselLength" placeholder="Vessel Length" />
-        <input type="text" name="serviceType" placeholder="Service Type" required />
-        <input type="text" name="location" placeholder="Location" />
-        <input type="text" name="urgency" placeholder="Urgency" />
-        <textarea name="message" placeholder="Additional Message"></textarea>
-        <button type="submit">Send Quote Request</button>
-    </form>
+    </div>
+    
+    <script>
+        // Form validation and enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Phone number formatting
+            const phoneInputs = document.querySelectorAll('input[type="tel"]');
+            phoneInputs.forEach(input => {
+                input.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length >= 6) {
+                        value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+                    } else if (value.length >= 3) {
+                        value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+                    }
+                    e.target.value = value;
+                });
+            });
+            
+            // Form submission handling
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                    
+                    // Re-enable button after 5 seconds as fallback
+                    setTimeout(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = submitBtn.textContent.includes('Quote') ? 'Get Free Quote' : 'Send Message';
+                    }, 5000);
+                });
+            });
+            
+            // Basic client-side validation
+            const requiredFields = document.querySelectorAll('input[required], textarea[required], select[required]');
+            requiredFields.forEach(field => {
+                field.addEventListener('blur', function() {
+                    if (!this.value.trim()) {
+                        this.style.borderColor = '#dc2626';
+                    } else {
+                        this.style.borderColor = '#d1d5db';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

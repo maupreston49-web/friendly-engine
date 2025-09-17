@@ -1,0 +1,94 @@
+{
+  "name": "DeepHull Diving - Professional Underwater Services",
+  "short_name": "DeepHull Diving",
+  "description": "Certified commercial divers for underwater hull cleaning, prop polishing, and zinc replacement. 24/7 emergency service in Jacksonville, St. Augustine, and Ponte Vedra Beach.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e40af",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["business", "marine", "services"],
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "375x667",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Get Quote",
+      "short_name": "Quote",
+      "description": "Get a free quote for underwater services",
+      "url": "/#quote",
+      "icons": [
+        {
+          "src": "/shortcut-quote.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Contact DeepHull Diving",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/shortcut-contact.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Call Now",
+      "short_name": "Call",
+      "description": "Call (904) 570-0910",
+      "url": "tel:+19045700910",
+      "icons": [
+        {
+          "src": "/shortcut-phone.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

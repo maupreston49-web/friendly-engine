@@ -1,14 +1,46 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://deephull.netlify.app/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow important pages
+Allow: /
+Allow: /#services
+Allow: /#about
+Allow: /#contact
+Allow: /#quote
+Allow: /forms.html
+Allow: /success.html
+
+# Block common bot traps
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow important assets
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
+Allow: /favicon-32x32.png
+Allow: /favicon-16x16.png
+Allow: /site.webmanifest
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
