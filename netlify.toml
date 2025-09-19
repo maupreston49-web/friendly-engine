@@ -1,6 +1,7 @@
 # Netlify config for DeepHull Diving static SPA
 [build]
-  publish = "."
+  command = "npm run build"
+  publish = "dist"
 
 # SPA routing (React/Vite)
 [[redirects]]
